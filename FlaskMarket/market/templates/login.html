@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" width="20%" style="border-radius: 60%" src="https://th.bing.com/th/id/R.00168fc10bc3c6faca6aac77d65f66f4?rik=iODdTzG7yKN8XQ&riu=http%3a%2f%2fwww.an.132productions.com%2fwp-content%2fuploads%2f2011%2f11%2fAN_Logo.jpg&ehk=wMnd2s8GCVG1jWXoa8M3k8nY72yG9sGvUZm6GN%2fj5V4%3d&risl=&pid=ImgRaw&r=0" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Log in
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="James Dawson")}}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control")}}
+
+            <br>
+
+            {{ form.submit(class="btn btn-block btn-primary")}}
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Do not have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+<!--            <div class="checkbox mb-3">-->
+<!--                <div style="display: inline-flex">-->
+<!--                    <h6>Do not have an account?</h6>-->
+<!--                    <a href="{{ url_for('register_page') }}" style="padding-left: 1rem">Sign In</a>-->
+<!--                </div>-->
+<!--            </div>-->
+        </form>
+    </div>
+</body>
+{% endblock %}
